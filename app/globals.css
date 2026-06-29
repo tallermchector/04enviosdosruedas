@@ -1,0 +1,254 @@
+@import "tailwindcss";
+
+@theme {
+  --color-egyptian-blue: #0636A5;
+  --color-sunbeam-yellow: #FFEC01;
+  --color-brand-blue-dark: #1E3A8A;
+  --color-brand-blue-light: #EFF6FF;
+  --color-brand-dark: #0F172A;
+  --color-brand-slate: #1E293B;
+  --color-brand-gray: #F8FAFC;
+  
+  --font-anton: var(--font-anton), sans-serif;
+  --font-bebas: var(--font-bebas), sans-serif;
+  --font-sans: var(--font-sans), sans-serif;
+
+  /* Custom shadows from Brand Book v2.0 */
+  --shadow-xs: 0 1px 2px rgba(6, 54, 165, 0.06);
+  --shadow-sm: 0 2px 4px rgba(6, 54, 165, 0.08), 0 1px 2px rgba(6, 54, 165, 0.04);
+  --shadow-md: 0 4px 8px rgba(6, 54, 165, 0.1), 0 2px 4px rgba(6, 54, 165, 0.06);
+  --shadow-lg: 0 8px 16px rgba(6, 54, 165, 0.12), 0 4px 8px rgba(6, 54, 165, 0.08);
+  --shadow-xl: 0 16px 32px rgba(6, 54, 165, 0.15), 0 8px 16px rgba(6, 54, 165, 0.1);
+
+  --shadow-accent-sm: 0 2px 4px rgba(255, 236, 1, 0.2);
+  --shadow-accent-md: 0 4px 8px rgba(255, 236, 1, 0.25), 0 2px 4px rgba(255, 236, 1, 0.15);
+  --shadow-accent-lg: 0 8px 16px rgba(255, 236, 1, 0.3), 0 4px 8px rgba(255, 236, 1, 0.2);
+
+  /* Border Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+}
+
+/* Custom scrollbar and selection */
+@layer utilities {
+  ::selection {
+    background-color: #FFEC00;
+    color: #0635A6;
+  }
+}
+
+html, body {
+  background-color: #0635A6;
+  background-image: radial-gradient(circle at 80% 20%, rgba(255, 236, 0, 0.15) 0%, transparent 45%), 
+                    radial-gradient(circle at 15% 80%, rgba(0, 0, 0, 0.35) 0%, transparent 55%);
+  background-attachment: fixed;
+  background-size: cover;
+  color: #ffffff;
+  scroll-behavior: smooth;
+  font-family: var(--font-sans), sans-serif;
+}
+
+/* Reset default white backgrounds on key wrappers */
+main, .bg-white {
+  background-color: transparent !important;
+}
+
+/* Standard cards and list containers to Frosted Glass */
+.bg-slate-50, 
+.bg-slate-100, 
+.bg-slate-900, 
+.bg-brand-gray,
+.bg-slate-950,
+.bg-slate-900\/20,
+.bg-egyptian-blue\/5,
+.bg-sunbeam-yellow\/5 {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+
+/* Hover effects for glass panels */
+.hover\:bg-slate-100\/50:hover,
+.hover\:bg-slate-50:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Specific highlight cards (like the active plan / hero banners) */
+.border-egyptian-blue\/20,
+.border-slate-100,
+.border-slate-200,
+.border-slate-300 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Text adaptations: ensure high readability on the dark blue glass backdrop */
+[class*="text-slate-"],
+[class*="text-gray-"],
+[class*="text-zinc-"],
+[class*="text-neutral-"],
+[class*="text-stone-"],
+.text-slate-600, 
+.text-slate-500, 
+.text-slate-400, 
+.text-slate-700,
+.text-brand-dark,
+.text-slate-800 {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+[class*="text-slate-900"],
+[class*="text-gray-900"],
+[class*="text-zinc-900"],
+[class*="text-neutral-900"],
+[class*="text-slate-950"],
+[class*="text-gray-950"],
+.text-slate-900, 
+.text-brand-dark,
+.text-slate-800.font-bold {
+  color: #ffffff !important;
+}
+
+.text-egyptian-blue {
+  color: #FFEC00 !important; /* Make brand links/texts stand out in Sunbeam Yellow */
+}
+
+/* Keep actual yellow text/icons yellow */
+.text-sunbeam-yellow {
+  color: #FFEC00 !important;
+}
+
+/* Titles and Display headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Active plan borders */
+.border-egyptian-blue {
+  border-color: #FFEC00 !important;
+}
+
+/* Custom inputs, dropdowns, and textareas in frosted glass */
+input, select, textarea {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-radius: 0.75rem !important;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #FFEC00 !important;
+  box-shadow: 0 0 0 2px rgba(255, 236, 0, 0.2) !important;
+  outline: none !important;
+}
+
+/* Exceptions: Protect CTAs & key Action Buttons */
+.bg-sunbeam-yellow {
+  background-color: #FFEC00 !important;
+  color: #0635A6 !important;
+  backdrop-filter: none !important;
+  border: none !important;
+}
+.bg-sunbeam-yellow:hover {
+  background-color: #ffffff !important;
+  color: #0635A6 !important;
+}
+
+.bg-emerald-600 {
+  background-color: #10b981 !important;
+  color: #ffffff !important;
+  backdrop-filter: none !important;
+  border: none !important;
+}
+.bg-emerald-600:hover {
+  background-color: #059669 !important;
+}
+
+/* Make icons stand out */
+.text-egyptian-blue svg,
+svg.text-egyptian-blue {
+  color: #FFEC00 !important;
+}
+
+/* Hero Badge */
+.bg-egyptian-blue {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+/* Brand Book v2.0 Gradients */
+.gradient-blue {
+  background: linear-gradient(135deg, #0636A5 0%, #1E3A8A 50%, #172554 100%) !important;
+}
+.gradient-blue-light {
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 50%, #BFDBFE 100%) !important;
+}
+.gradient-yellow {
+  background: linear-gradient(135deg, #FFEC01 0%, #F59E0B 100%) !important;
+}
+.gradient-mixed {
+  background: linear-gradient(135deg, #0636A5 0%, #1E40AF 40%, #FFEC01 100%) !important;
+}
+.gradient-surface {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%) !important;
+}
+.gradient-dark {
+  background: linear-gradient(180deg, #0F172A 0%, #1E293B 50%, #334155 100%) !important;
+}
+
+/* Glassmorphism Classes */
+.glassmorphism {
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  background: rgba(6, 54, 165, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Glow effects and Micro-interactions */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(6, 54, 165, 0.3) !important;
+}
+.glow-yellow {
+  box-shadow: 0 0 20px rgba(255, 236, 1, 0.4) !important;
+}
+.glow-blue-lg:hover {
+  box-shadow: 0 0 40px rgba(6, 54, 165, 0.4) !important;
+}
+.glow-yellow-lg:hover {
+  box-shadow: 0 0 40px rgba(255, 236, 1, 0.5) !important;
+}
+
+/* Custom Micro-interactions */
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 40%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.1) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(45deg);
+  transition: transform 0.5s ease-out;
+  pointer-events: none;
+}
+.shimmer-btn:hover::after {
+  transform: translate(50%, 50%) rotate(45deg);
+}

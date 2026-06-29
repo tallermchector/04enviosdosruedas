@@ -1,0 +1,6 @@
+{
+  "name": "Envíos DosRuedas",
+  "description": "Sistema de logística de última milla, envíos express, low cost y flex para e-commerce en Mar del Plata.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
