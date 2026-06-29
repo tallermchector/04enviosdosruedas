@@ -52,7 +52,7 @@ export function BrandLogo({ className = "h-10 w-auto" }: { className?: string })
           Envíos <span className="text-sunbeam-yellow">DosRuedas</span>
         </span>
         <span className="font-bebas text-[10px] tracking-widest text-white/60 uppercase leading-none mt-1">
-          LOGÍSTICA URBANA • MDQ
+          TU SOLUCIÓN CONFIABLE • MDQ
         </span>
       </div>
     </div>
